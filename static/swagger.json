@@ -1,0 +1,82 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "title": "Employee API",
+      "description": "API para gestionar empleados.",
+      "version": "1.0.0"
+    },
+    "paths": {
+      "/employees": {
+        "post": {
+          "summary": "Crear un empleado",
+          "description": "Crea un nuevo empleado.",
+          "parameters": [
+            {
+              "name": "employee",
+              "in": "body",
+              "required": true,
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "type": "string"
+                  },
+                  "email": {
+                    "type": "string",
+                    "format": "email"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "phones": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "number": {
+                          "type": "string"
+                        },
+                        "citycode": {
+                          "type": "integer"
+                        },
+                        "countrycode": {
+                          "type": "integer"
+                        }
+                      },
+                      "required": ["number", "citycode", "countrycode"]
+                    }
+                  }
+                },
+                "required": ["name", "email", "password", "phones"]
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Empleado creado exitosamente",
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "status": {
+                    "type": "string"
+                  },
+                  "data": {
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Error de validación"
+            },
+            "409": {
+              "description": "Empleado ya registrado"
+            },
+            "500": {
+              "description": "Error interno del servidor"
+            }
+          }
+        }
+      }
+    }
+  }
