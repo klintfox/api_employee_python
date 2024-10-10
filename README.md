@@ -29,18 +29,21 @@ python app.py
 ```
 ## Pruebas
 - Ingresar en el navegador e ir a http://localhost:5000/swagger/#/default/post_employees
+Esquema
+```sh
 {
-  "name": "keso",
-  "email": "keos@example.cl",
-  "password": "Urbanito23",
+  "name": "Peter",
+  "email": "Peter@example.cl",
+  "password": "Peter123",
   "phones": [
     {
       "number": "12345678",
-      "citycode": 3,
-      "countrycode": 55
+      "citycode": 1,
+      "countrycode": 57
     }
   ]
 }
+```
 
 ### Documentación de la API con Flasgger
 Para documentar nuestra API, utilizamos Flasgger, una extensión de Flask que facilita la creación de documentación Swagger para APIs RESTful.
