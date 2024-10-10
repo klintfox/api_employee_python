@@ -53,11 +53,9 @@ Flasgger permite integrar Swagger UI en aplicaciones Flask, proporcionando una i
 
 ### Instalación
 Para instalar Flasgger, puedes utilizar pip:
-
-    bash
-    ```sh
-        pip install flasgger
-    ```
+```sh
+    pip install flasgger
+```
 
 ### Schema
 
