@@ -1,5 +1,5 @@
 # API_Employee_Python
-API en python para gestionar el registro de un empleado la base de datos.
+API en python para gestionar el registro de un empleado en una base de datos SQLAlchemy.
 
 
 ## Clonar y configurar proyecto
@@ -61,48 +61,48 @@ Para instalar Flasgger, puedes utilizar pip:
 
 ### Schema
 
-Validación de datos: Se crea el archivo employee_schema.py el cual define un esquema de validación para los datos que se envían al API, usando herramientas como Marshmallow o Pydantic. Es responsable de verificar que los datos que recibe el API cumplan con las expectativas antes de procesarlos.
+**Validación de datos:** Se crea el archivo employee_schema.py el cual define un esquema de validación para los datos que se envían al API, usando herramientas como Marshmallow o Pydantic. Es responsable de verificar que los datos que recibe el API cumplan con las expectativas antes de procesarlos.
 
-Lógica de Negocio: Ayuda a asegurar que los datos son correctos y en el formato adecuado, facilitando el manejo de errores antes de que lleguen a la lógica de negocio.
+**Lógica de Negocio:** Ayuda a asegurar que los datos son correctos y en el formato adecuado, facilitando el manejo de errores antes de que lleguen a la lógica de negocio.
 
 ### Documentación de API
 
 El archivo swagger.json creado es una forma de definir la documentación del API en un formato estructurado que puede ser interpretado por herramientas de Swagger. Algunas razones por las cuales podrías querer tener este archivo:
 
-1. Especificación Estándar
+1. **Especificación Estándar**
 Formato Swagger: Utilizar el formato Swagger (OpenAPI Specification) permite describir tu API de manera estándar, lo que facilita la comprensión para otros desarrolladores y herramientas que pueden interactuar con tu API.
-2. Interoperabilidad
+2. **Interoperabilidad**
 Compatibilidad: Muchos clientes y herramientas de API (como Postman, Swagger UI, y otros) pueden leer y generar documentación y código cliente a partir de este archivo, lo que aumenta la interoperabilidad.
-3. Desarrollo de la API
+3. **Desarrollo de la API**
 Referencia Rápida: El archivo actúa como una referencia rápida para el desarrollo, ya que todos los endpoints, parámetros y respuestas están documentados en un solo lugar.
-4. Facilidad de Pruebas
+4. **Facilidad de Pruebas**
 Testing: Puedes utilizar herramientas que leen esta especificación para probar automáticamente tu API, asegurando que se comporta de acuerdo con la documentación.
-5. Actualizaciones Simples
+5. **Actualizaciones Simples**
 Mantenimiento: Si realizas cambios en tu API, puedes actualizar el archivo swagger.json en lugar de tener que modificar múltiples documentos o secciones.
 
 
 ### Libreria Utilizadas
-1. Flask
+1. **Flask**
 Es un microframework para Python que permite crear aplicaciones web. Proporciona las herramientas y bibliotecas necesarias para manejar solicitudes HTTP, enrutamiento, plantillas, y más.
 Uso en tu código: Se usa para definir la aplicación principal y manejar las rutas y solicitudes.
-2. Flasgger
+2. **Flasgger**
 Es una extensión de Flask que simplifica la integración de Swagger para documentar APIs. Permite generar documentación interactiva para tus endpoints.
 Uso en tu código: Se usa para definir y servir la documentación de la API, y para configurar Swagger en tu aplicación.
-3. Flask-Swagger-UI
+3. **Flask-Swagger-UI**
 Es una extensión que proporciona una interfaz de usuario para la documentación Swagger de tu API. Permite visualizar y probar los endpoints de la API directamente desde un navegador.
 Uso en tu código: Se utiliza para servir la interfaz de Swagger UI, que permite a los usuarios interactuar con la API de manera visual.
-4. Pydantic
+4. **Pydantic**
 Es una biblioteca de validación de datos y configuración basada en tipos de Python. Proporciona un modelo de datos que se puede utilizar para validar y serializar datos fácilmente.
 Uso en tu código: Se utiliza para definir esquemas de validación de datos para las solicitudes a la API, como el modelo de empleado.
-5. Marshmallow
+5. **Marshmallow**
 Es una biblioteca de serialización/deserialización de objetos complejos a formatos simples como JSON. También permite la validación de datos.
 Uso en tu código: Se utiliza para validar y transformar los datos de entrada de las solicitudes en esquemas definidos.
-6. SQLAlchemy (implícito en db)
+6. **QLAlchemy** (implícito en db)
 Es un ORM (Object Relational Mapper) para Python que permite interactuar con bases de datos de manera más intuitiva mediante el uso de objetos.
 Uso en tu código: Proporciona las herramientas para definir modelos de base de datos y realizar consultas.
-7. Blueprint (de Flask)
+7. **Blueprint** (de Flask)
 Es una forma de organizar tu aplicación Flask en módulos. Permite definir rutas y manejadores de manera modular, facilitando la escalabilidad.
 Uso en tu código: Se utiliza para crear el blueprint del controlador de empleados, permitiendo registrar rutas relacionadas.
-8. Config (implícito en config)
+8. **Config** (implícito en config)
 Normalmente, es una clase o archivo que contiene la configuración de la aplicación, como variables de entorno, configuraciones de base de datos, etc.
 Uso en tu código: Se utiliza para cargar la configuración de la aplicación Flask.
